@@ -1,0 +1,169 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 0 0% 100%;
+  --foreground: 240 10% 3.9%;
+  --card: 0 0% 100%;
+  --card-foreground: 240 10% 3.9%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 240 10% 3.9%;
+  --primary: 160 84% 39%;
+  --primary-foreground: 355.7 100% 97.3%;
+  --secondary: 240 4.8% 95.9%;
+  --secondary-foreground: 240 5.9% 10%;
+  --muted: 240 4.8% 95.9%;
+  --muted-foreground: 240 3.8% 46.1%;
+  --accent: 240 4.8% 95.9%;
+  --accent-foreground: 240 5.9% 10%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 240 5.9% 90%;
+  --input: 240 5.9% 90%;
+  --ring: 160 84% 39%;
+  --radius: 0.5rem;
+}
+
+.dark {
+  --background: 0 0% 0%;
+  --foreground: 0 0% 98%;
+  --card: 240 10% 3.9%;
+  --card-foreground: 0 0% 98%;
+  --popover: 240 10% 3.9%;
+  --popover-foreground: 0 0% 98%;
+  --primary: 160 84% 39%;
+  --primary-foreground: 0 0% 0%;
+  --secondary: 240 3.7% 15.9%;
+  --secondary-foreground: 0 0% 98%;
+  --muted: 240 3.7% 15.9%;
+  --muted-foreground: 240 5% 64.9%;
+  --accent: 240 3.7% 15.9%;
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 240 3.7% 15.9%;
+  --input: 240 3.7% 15.9%;
+  --ring: 160 84% 39%;
+}
+
+body {
+  background-color: black;
+  color: white;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Add this to completely remove any bubble effects on all links and buttons */
+a,
+button,
+[role="button"] {
+  -webkit-tap-highlight-color: transparent !important;
+  user-select: none;
+}
+
+a::after,
+button::after,
+[role="button"]::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* Remove white bubble effect animation */
+button,
+a {
+  position: relative;
+  overflow: hidden;
+}
+
+button::after,
+a::after {
+  display: none !important;
+}
+
+/* Improve the blur effect to ensure it doesn't affect the menu */
+
+/* Ensure the mobile menu is always visible with highest z-index */
+.mobile-menu-container {
+  z-index: 9999 !important;
+  position: relative;
+}
+
+/* Ensure the mobile menu is never blurred and always on top */
+.mobile-menu {
+  filter: none !important;
+  z-index: 9999 !important;
+  pointer-events: auto !important;
+}
+
+/* Ensure mobile menu is always on top and clear */
+.no-blur {
+  filter: none !important;
+  z-index: 1000 !important;
+}
+
+/* Prevent any bubble animations */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Ensure animations play every time */
+.animate-always {
+  animation-fill-mode: both !important;
+}
+
+/* Fix mobile image overflow */
+@media (max-width: 350px) {
+  .project-image-container {
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .project-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+}
+
+/* Service card animations */
+.service-card {
+  transition: height 0.5s ease, transform 0.3s ease;
+}
+
+.service-card:hover .features-container {
+  animation: fadeIn 0.5s forwards;
+}
+
+.feature-item {
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Ensure no other elements overlap the menu */
+
+
+/* Ensure body content doesn't overlap */
+@media(max-width : 780px){
+  .touch-btn{
+    display: none;
+  }
+  .mobile-div{
+   display: none;
+  }
+  .txt{
+    margin-top: 2rem;
+  }
+}
