@@ -11,6 +11,7 @@ import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
 import { useTheme } from "next-themes"
 import { MobileMenu } from "@/components/mobile-menu"
+import about from "@/app/assets/WhatsApp Image 2025-03-23 at 15.15.26_b2058e00.jpg"
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -364,7 +365,7 @@ export default function AboutPage() {
               >
                 <div className="relative aspect-square rounded-xl overflow-hidden border border-purple-500/20 dark:border-purple-600/20 group">
                   <Image
-                    src="/placeholder.svg?height=600&width=600"
+                    src={about}
                     alt="Profile"
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-110"
@@ -546,14 +547,14 @@ export default function AboutPage() {
                 <CardContent className="p-6">
                   <div className="space-y-6">
                     <div>
-                      <h3 className="text-xl font-semibold">Bachelor of Science in Computer Science</h3>
-                      <p className="text-purple-400 dark:text-purple-600">University of Technology</p>
-                      <p className="text-gray-400 dark:text-gray-600">2014 - 2018</p>
+                      <h3 className="text-xl font-semibold text-white dark:text-black">MERN Stack Development</h3>
+                      <p className="text-purple-400 dark:text-purple-600">Saylani Mass IT Training Program</p>
+                      <p className="text-gray-400 dark:text-gray-600">2023 - 2025</p>
                     </div>
                     <div>
-                      <h3 className="text-xl font-semibold">Web Development Certification</h3>
-                      <p className="text-purple-400 dark:text-purple-600">Tech Academy</p>
-                      <p className="text-gray-400 dark:text-gray-600">2017</p>
+                      <h3 className="text-xl font-semibold text-white dark:text-black">BS In Software Enginnering</h3>
+                      <p className="text-purple-400 dark:text-purple-600">Sindh Maddarsatul Islam University</p>
+                      <p className="text-gray-400 dark:text-gray-600">In present </p>
                     </div>
                   </div>
                 </CardContent>

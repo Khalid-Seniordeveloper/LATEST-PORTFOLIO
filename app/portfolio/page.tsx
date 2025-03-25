@@ -7,7 +7,16 @@ import { motion } from 'framer-motion';
 import { MobileMenu } from '@/components/mobile-menu';
 import { useTheme } from 'next-themes';
 import { Moon, Sun } from 'lucide-react';
-
+import  figma  from '@/app/assets/figma.png';
+import vercel from "@/app/assets/vercel.png";
+import react from "@/app/assets/react.png";
+import next from "@/app/assets/next.png";
+import mongod from "@/app/assets/mongod.png";
+import ex from "@/app/assets/ex.png";
+import gsap from "@/app/assets/gsap.jpg";
+import talwind from "@/app/assets/talwind.png";
+import ts from "@/app/assets/ts.png";
+import ec from "@/app/assets/ec.jpg"
 export default function PortfolioSection () {
     const staggerContainer = {
         hidden: { opacity: 0 },
@@ -30,8 +39,8 @@ export default function PortfolioSection () {
           features: ["Real-time live score updates", "Built using WebSockets for instant data transmission"],
           description:
             "I developed an interactive and responsive UI to provide sports fans with seamless real-time game updates.",
-          image: `?height=600&width=800`,
-          mobileImage: "/placeholder.svg?height=400&width=200",
+          image: ec,
+          mobileImage:ec,
           link: "#",
         },
         {
@@ -339,48 +348,50 @@ transition={{ duration: 0.6, delay: 0.8 }}
 
         {/* Tech Stack */}
         <motion.div
-          className="mt-32 pt-16 border-t border-purple-500/10 dark:border-purple-600/10"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <h3 className="text-center text-xl font-semibold mb-12 text-gray-400 dark:text-gray-600">
-            Technologies I Work With
-          </h3>
-          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
-            {[
-              { name: "Figma", icon: "/placeholder.svg?height=40&width=40" },
-              { name: "Vercel", icon: "/placeholder.svg?height=40&width=40" },
-              { name: "React", icon: "/placeholder.svg?height=40&width=40" },
-              { name: "Next.js", icon: "/placeholder.svg?height=40&width=40" },
-              { name: "TailwindCSS", icon: "/placeholder.svg?height=40&width=40" },
-              { name: "TypeScript", icon: "/placeholder.svg?height=40&width=40" },
-              { name: "MongoDB", icon: "/placeholder.svg?height=40&width=40" },
-              { name: "Express", icon: "/placeholder.svg?height=40&width=40" },
-              { name: "GSAP", icon: "/placeholder.svg?height=40&width=40" },
-            ].map((tech, index) => (
-              <motion.div
-                key={tech.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.3, delay: index * 0.1 }}
-                whileHover={{ y: -5 }}
-                className="flex flex-col items-center"
-              >
-                <Image
-                  src={tech.icon || "/placeholder.svg"}
-                  alt={tech.name}
-                  width={40}
-                  height={40}
-                  className="grayscale hover:grayscale-0 transition-all duration-300"
-                />
-                <span className="text-xs text-gray-500 dark:text-gray-600 mt-2">{tech.name}</span>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
+  className="mt-32 pt-16 border-t border-purple-500/10 dark:border-purple-600/10"
+  initial={{ opacity: 0, y: 30 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.6 }}
+>
+  <h3 className="text-center text-xl font-semibold mb-12 text-gray-400 dark:text-gray-600">
+    Technologies I Work With
+  </h3>
+  <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
+    {[
+      { name: "Figma", icon: figma },
+      { name: "Vercel", icon: vercel },
+      { name: "React", icon: react },
+      { name: "Next.js", icon: next },
+      { name: "TailwindCSS", icon: talwind },
+      { name: "TypeScript", icon: ts },
+      { name: "MongoDB", icon: mongod },
+      { name: "Express", icon: ex },
+      { name: "GSAP", icon: gsap },
+    ].map((tech, index) => (
+      <motion.div
+        key={tech.name}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.3, delay: index * 0.1 }}
+        whileHover={{ y: -5 }}
+        className="flex flex-col items-center"
+      >
+        <Image
+          src={tech.icon || "/placeholder.svg"}
+          alt={tech.name}
+          width={40}
+          height={40}
+          className="transition-all duration-300" // Removed grayscale classes
+        />
+        <span className="text-xs text-gray-500 dark:text-gray-600 mt-2">
+          {tech.name}
+        </span>
+      </motion.div>
+    ))}
+  </div>
+</motion.div>
       </motion.div>
     </div>
   </section>

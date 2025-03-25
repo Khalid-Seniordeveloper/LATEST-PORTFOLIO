@@ -17,6 +17,11 @@ import { MobileMenu } from "@/components/mobile-menu"
 import { ProjectsSection } from "@/components/projects-section"
 import { ServicesSection } from "@/components/services-section"
 import {PortfolioSection} from "@/components/portfoliosection"
+import about from "@/app/assets/WhatsApp Image 2025-03-23 at 15.15.26_b2058e00.jpg"
+import g1 from "@/app/assets/g1.jpg"
+import g2 from "@/app/assets/g2.jpg"
+import g3 from "@/app/assets/g3.jpg"
+import g4 from "@/app/assets/g4.jpg"
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
@@ -453,6 +458,21 @@ export default function Home() {
                   About
                 </Link>
               </motion.div>
+
+
+
+
+              <motion.div variants={fadeIn} custom={3}>
+                <Link
+                  href="#portfolio"
+                  onClick={(e) => handleNavClick(e, "#portfolio")}
+                  className={`text-sm font-medium transition-colors border-b-2 pb-1 ${activeSection === "services" ? "text-purple-400 dark:text-purple-600 border-purple-400 dark:border-purple-600" : "border-transparent hover:text-purple-400 dark:hover:text-purple-600 hover:border-purple-400 dark:hover:border-purple-600"}`}
+                >
+                  Portfolio
+                </Link>
+              </motion.div>
+
+
               <motion.div variants={fadeIn} custom={2}>
                 <Link
                   href="#projects"
@@ -471,6 +491,8 @@ export default function Home() {
                   Services
                 </Link>
               </motion.div>
+
+       
               <motion.div variants={fadeIn} custom={4}>
                 <Link
                   href="#testimonials"
@@ -619,7 +641,7 @@ export default function Home() {
               >
                 <div className="relative aspect-square rounded-xl overflow-hidden border border-purple-500/20 dark:border-purple-600/20 group">
                   <Image
-                    src="/placeholder.svg?height=600&width=600"
+                    src={about}
                     alt="Profile"
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-110"
@@ -729,132 +751,135 @@ export default function Home() {
 
       {/* Testimonials Section */}
       <section id="testimonials" className="min-h-screen flex items-center py-20">
-        <div className="container mx-auto px-4">
+  <div className="container mx-auto px-4">
+    <motion.div
+      className="max-w-4xl mx-auto"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6 }}
+    >
+      <motion.h2
+        className="text-4xl md:text-5xl font-anton tracking-tight mb-12 text-center"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
+        CLIENT{" "}
+        <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 dark:from-purple-600 dark:to-pink-700">
+          TESTIMONIALS
+        </span>
+      </motion.h2>
+
+      <motion.div
+        className="grid md:grid-cols-2 gap-8"
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
+        {[
+          {
+            name: "Sarah Johnson",
+            role: "CEO, TechStart Inc.",
+            image: g1,
+            quote:
+              "Working with this developer was an absolute pleasure. They delivered our e-commerce platform ahead of schedule and exceeded all our expectations. The attention to detail and technical expertise were impressive.",
+          },
+          {
+            name: "Michael Chen",
+            role: "Founder, DesignHub",
+            image: g2,
+            quote:"The dashboard application developed for our team has transformed how we analyze data. The UI is intuitive, the performance is excellent, and the developer was responsive throughout the entire process.",
+          },
+          {
+            name: "Emily Rodriguez",
+            role: "Marketing Director, GrowthLabs",
+            image: g3,
+            quote:
+              "Our website redesign project was handled with incredible skill. The developer understood our brand vision and translated it into a beautiful, functional site that has significantly increased our conversion rates.",
+          },
+          {
+            name: "David Wilson",
+            role: "CTO, InnovateTech",
+            image: g4,
+            quote:
+              "The API development work was exceptional. Clean code, well-documented, and perfectly integrated with our existing systems. I highly recommend their services for any technical project.",
+          },
+        ].map((testimonial, index) => (
           <motion.div
-            className="max-w-4xl mx-auto"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            key={testimonial.name}
+            variants={fadeIn}
+            custom={index}
+            whileHover={{ y: -10, transition: { duration: 0.3 } }}
           >
-            <motion.h2
-              className="text-4xl md:text-5xl font-anton tracking-tight mb-12 text-center"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              CLIENT{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 dark:from-purple-600 dark:to-pink-700">
-                TESTIMONIALS
-              </span>
-            </motion.h2>
-
-            <motion.div
-              className="grid md:grid-cols-2 gap-8"
-              variants={staggerContainer}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-            >
-              {[
-                {
-                  name: "Sarah Johnson",
-                  role: "CEO, TechStart Inc.",
-                  image: "/placeholder.svg?height=100&width=100",
-                  quote:
-                    "Working with this developer was an absolute pleasure. They delivered our e-commerce platform ahead of schedule and exceeded all our expectations. The attention to detail and technical expertise were impressive.",
-                },
-                {
-                  name: "Michael Chen",
-                  role: "Founder, DesignHub",
-                  image: "/placeholder.svg?height=100&width=100",
-                  quote:
-                    "The dashboard application developed for our team has transformed how we analyze data. The UI is intuitive, the performance is excellent, and the developer was responsive throughout the entire process.",
-                },
-                {
-                  name: "Emily Rodriguez",
-                  role: "Marketing Director, GrowthLabs",
-                  image: "/placeholder.svg?height=100&width=100",
-                  quote:
-                    "Our website redesign project was handled with incredible skill. The developer understood our brand vision and translated it into a beautiful, functional site that has significantly increased our conversion rates.",
-                },
-                {
-                  name: "David Wilson",
-                  role: "CTO, InnovateTech",
-                  image: "/placeholder.svg?height=100&width=100",
-                  quote:
-                    "The API development work was exceptional. Clean code, well-documented, and perfectly integrated with our existing systems. I highly recommend their services for any technical project.",
-                },
-              ].map((testimonial, index) => (
-                <motion.div
-                  key={testimonial.name}
-                  variants={fadeIn}
-                  custom={index}
-                  whileHover={{ y: -10, transition: { duration: 0.3 } }}
-                >
-                  <Card className="border-none bg-slate-900/40 dark:bg-slate-200/40 backdrop-blur-sm border border-purple-500/10 dark:border-purple-600/10 hover:border-purple-500/50 dark:hover:border-purple-600/50 transition-all h-full group">
-                    <CardContent className="p-6">
-                      <div className="flex items-center mb-4">
-                        <div className="mr-4">
-                          <motion.div
-                            className="w-12 h-12 rounded-full overflow-hidden"
-                            whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}
-                          >
-                            <Image
-                              src={testimonial.image || "/placeholder.svg"}
-                              alt={testimonial.name}
-                              width={48}
-                              height={48}
-                              className="object-cover"
-                            />
-                          </motion.div>
-                        </div>
-                        <div>
-                          <h3 className="text-lg font-semibold">{testimonial.name}</h3>
-                          <p className="text-sm text-gray-400 dark:text-gray-600">{testimonial.role}</p>
-                        </div>
-                      </div>
-                      <p className="text-gray-300 dark:text-gray-700 italic relative">
-                        <span className="absolute -left-2 -top-2 text-3xl text-purple-500/30 dark:text-purple-600/30">
-                          "
-                        </span>
-                        {testimonial.quote}
-                        <span className="absolute -right-2 bottom-0 text-3xl text-purple-500/30 dark:text-purple-600/30">
-                          "
-                        </span>
-                      </p>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              ))}
-            </motion.div>
-
-            <motion.div
-              className="text-center mt-12"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.6 }}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Button
-                className="border border-purple-500/20 bg-purple-500/10 hover:bg-purple-500/20 dark:bg-purple-600/10 dark:hover:bg-purple-600/20 text-white dark:text-slate-900 rounded-full flex items-center gap-2 px-6 py-3 mx-auto relative overflow-hidden group"
-                onClick={() => router.push("/testimonials")}
-              >
-                <span className="relative z-10">View All Testimonials</span>
-                <ArrowUpRight className="h-4 w-4 relative z-10 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                <motion.span
-                  className="absolute inset-0 bg-purple-500 dark:bg-purple-600 opacity-0 group-hover:opacity-20 transition-opacity"
-                  initial={false}
-                  whileHover={{ opacity: 0.2, transition: { duration: 0.3 } }}
-                />
-              </Button>
-            </motion.div>
+            <Card className="border-none bg-slate-900/40 dark:bg-slate-200/40 backdrop-blur-sm border border-purple-500/10 dark:border-purple-600/10 hover:border-purple-500/50 dark:hover:border-purple-600/50 transition-all h-full group">
+              <CardContent className="p-6">
+                <div className="flex items-center mb-4">
+                  <div className="mr-4">
+                    <motion.div
+                      className="w-12 h-12 rounded-full overflow-hidden"
+                      whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}
+                    >
+                      <Image
+                        src={testimonial.image || "/placeholder.svg"}
+                        alt={testimonial.name}
+                        width={48}
+                        height={48}
+                        className="object-cover"
+                      />
+                    </motion.div>
+                  </div>
+                  <div>
+                  <h3 className="text-lg font-semibold  text-gray-400 dark:text-gray-600">
+                      {testimonial.name}
+                    </h3>
+                    <p className="text-sm text-gray-400 dark:text-gray-600">
+                      {testimonial.role}
+                    </p>
+                  </div>
+                </div>
+                <p className="text-gray-300 dark:text-gray-700 italic relative">
+                  <span className="absolute -left-2 -top-2 text-3xl text-purple-500/30 dark:text-purple-600/30">
+                    "
+                  </span>
+                  {testimonial.quote}
+                  <span className="absolute -right-2 bottom-0 text-3xl text-purple-500/30 dark:text-purple-600/30">
+                    "
+                  </span>
+                </p>
+              </CardContent>
+            </Card>
           </motion.div>
-        </div>
-      </section>
+        ))}
+      </motion.div>
+
+      <motion.div
+        className="text-center mt-12"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay: 0.6 }}
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+      >
+        <Button
+          className="border border-purple-500/20 bg-purple-500/10 hover:bg-purple-500/20 dark:bg-purple-600/10 dark:hover:bg-purple-600/20 text-white dark:text-slate-900 rounded-full flex items-center gap-2 px-6 py-3 mx-auto relative overflow-hidden group"
+          onClick={() => router.push("/testimonials")}
+        >
+          <span className="relative z-10">View All Testimonials</span>
+          <ArrowUpRight className="h-4 w-4 relative z-10 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+          <motion.span
+            className="absolute inset-0 bg-purple-500 dark:bg-purple-600 opacity-0 group-hover:opacity-20 transition-opacity"
+            initial={false}
+            whileHover={{ opacity: 0.2, transition: { duration: 0.3 } }}
+          />
+        </Button>
+      </motion.div>
+    </motion.div>
+  </div>
+</section>
 
       {/* Contact Section */}
       <section id="contact" className="min-h-screen flex items-center py-20">

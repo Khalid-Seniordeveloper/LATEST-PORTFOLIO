@@ -6,7 +6,9 @@ import Link from "next/link"
 import { ExternalLink, Github, Code, Palette, Database } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-
+import chatbot from "@/app/assets/chatbot.jpg"
+import furniture from "@/app/assets/fthumbnail.png"
+import car from "@/app/assets/Screenshot 2025-03-07 204056.png"
 interface Project {
   id: string
   title: string
@@ -23,70 +25,38 @@ export function ProjectsSection() {
   const projects: Project[] = [
     {
       id: "project-1",
-      title: "E-Commerce Platform",
-      description: "A full-featured online store with product catalog, shopping cart, and secure checkout process.",
-      image: "/placeholder.svg?height=600&width=800",
+      title: "Chatbot Builder",
+      description: "Turn your website and PDFs into smart chatbots instantly. Embed and engage with ease!",
+      image: chatbot,
       mobileImage: "/placeholder.svg?height=400&width=200",
-      tags: ["Next.js", "Tailwind CSS", "Stripe", "MongoDB"],
+      tags: ["Next.js", "Tailwind CSS", "Lang Chain", "MongoDB"],
       github: "https://github.com",
-      liveUrl: "https://example.com",
+      liveUrl: "https://backend-chatbotbuuilder.vercel.app/",
       category: "fullstack",
     },
     {
       id: "project-2",
-      title: "Portfolio Website",
-      description: "A modern, responsive portfolio website with smooth animations and dark mode support.",
-      image: "/placeholder.svg?height=600&width=800",
+      title: "E-Commerce Platform",
+      description: "Experience seamless furniture shopping with our full-stack eCommerce platform. Stylish, fast, and built for convenience!",
+      image: furniture,
       mobileImage: "/placeholder.svg?height=400&width=200",
-      tags: ["React", "Framer Motion", "Tailwind CSS"],
-      github: "https://github.com",
-      liveUrl: "https://example.com",
-      category: "frontend",
+      tags: ["Next.js",  "Tailwind CSS" , "Sanity"],
+      github: "https://github.com/Khalid-Seniordeveloper/INTERIOR-DESIGN",
+      liveUrl: "https://interior-design-a67a.vercel.app/",
+      category: "FullStack",
     },
     {
       id: "project-3",
-      title: "Task Management App",
-      description: "A collaborative task management application with real-time updates and team features.",
-      image: "/placeholder.svg?height=600&width=800",
+      title: "Car E-Commerce App",
+      description: "Discover the ultimate car shopping experience with our fully responsive Next.js-powered platform. Sleek, fast, and designed for perfection!",
+      image: car,
       mobileImage: "/placeholder.svg?height=400&width=200",
-      tags: ["React", "Node.js", "Socket.io", "MongoDB"],
-      github: "https://github.com",
-      liveUrl: "https://example.com",
-      category: "fullstack",
+      tags: ["React.js", "Talwind CSS"],
+      github: "https://github.com/Khalid-Seniordeveloper/INTERIOR-DESIGN",
+      liveUrl: "https://car-ecommerce-five.vercel.app/",
+      category: "Frontend",
     },
-    {
-      id: "project-4",
-      title: "Weather Dashboard",
-      description: "A beautiful weather application with detailed forecasts and interactive maps.",
-      image: "/placeholder.svg?height=600&width=800",
-      mobileImage: "/placeholder.svg?height=400&width=200",
-      tags: ["React", "OpenWeather API", "Chart.js"],
-      github: "https://github.com",
-      liveUrl: "https://example.com",
-      category: "frontend",
-    },
-    {
-      id: "project-5",
-      title: "Blog Platform",
-      description: "A content management system for creating and publishing blog posts with SEO features.",
-      image: "/placeholder.svg?height=600&width=800",
-      mobileImage: "/placeholder.svg?height=400&width=200",
-      tags: ["Next.js", "MDX", "Prisma", "PostgreSQL"],
-      github: "https://github.com",
-      liveUrl: "https://example.com",
-      category: "fullstack",
-    },
-    {
-      id: "project-6",
-      title: "UI Component Library",
-      description: "A collection of reusable UI components built with React and styled with Tailwind CSS.",
-      image: "/placeholder.svg?height=600&width=800",
-      mobileImage: "/placeholder.svg?height=400&width=200",
-      tags: ["React", "Storybook", "Tailwind CSS"],
-      github: "https://github.com",
-      liveUrl: "https://example.com",
-      category: "design",
-    },
+ 
   ]
 
   const getCategoryIcon = (category: string) => {
@@ -204,7 +174,7 @@ export function ProjectsSection() {
                         {project.category.charAt(0).toUpperCase() + project.category.slice(1)}
                       </Badge>
                     </div>
-                    <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
+                    <h3 className="text-xl font-semibold mb-2 text-white dark:text-black">{project.title}</h3>
                     <p className="text-gray-300 dark:text-gray-700 mb-4">{project.description}</p>
                     <div className="flex flex-wrap gap-2">
                       {project.tags.map((tag) => (

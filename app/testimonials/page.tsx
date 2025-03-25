@@ -10,6 +10,11 @@ import { motion, useScroll, useTransform } from "framer-motion"
 import { Card, CardContent } from "@/components/ui/card"
 import { useTheme } from "next-themes"
 import { MobileMenu } from "@/components/mobile-menu"
+import g1 from "@/app/assets/g1.jpg"
+import g2 from "@/app/assets/g2.jpg"
+import g3 from "@/app/assets/g3.jpg"
+import g4 from "@/app/assets/g4.jpg"
+import g5 from "@/app/assets/g5.jpg"
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -179,42 +184,42 @@ export default function TestimonialsPage() {
     {
       name: "Sarah Johnson",
       role: "CEO, TechStart Inc.",
-      image: "/placeholder.svg?height=100&width=100",
+      image: g1,
       quote:
         "Working with this developer was an absolute pleasure. They delivered our e-commerce platform ahead of schedule and exceeded all our expectations. The attention to detail and technical expertise were impressive.",
     },
     {
       name: "Michael Chen",
       role: "Founder, DesignHub",
-      image: "/placeholder.svg?height=100&width=100",
+      image: g2,
       quote:
         "The dashboard application developed for our team has transformed how we analyze data. The UI is intuitive, the performance is excellent, and the developer was responsive throughout the entire process.",
     },
     {
       name: "Emily Rodriguez",
       role: "Marketing Director, GrowthLabs",
-      image: "/placeholder.svg?height=100&width=100",
+      image: g3,
       quote:
         "Our website redesign project was handled with incredible skill. The developer understood our brand vision and translated it into a beautiful, functional site that has significantly increased our conversion rates.",
     },
     {
       name: "David Wilson",
       role: "CTO, InnovateTech",
-      image: "/placeholder.svg?height=100&width=100",
+      image: g4,
       quote:
         "The API development work was exceptional. Clean code, well-documented, and perfectly integrated with our existing systems. I highly recommend their services for any technical project.",
     },
     {
       name: "Jennifer Lee",
       role: "E-commerce Manager, StyleShop",
-      image: "/placeholder.svg?height=100&width=100",
+      image: g5,
       quote:
         "Our online store's performance improved dramatically after the optimization work. Page load times decreased by 60%, and our conversion rate has nearly doubled. Extremely satisfied with the results.",
     },
     {
       name: "Robert Garcia",
       role: "Product Manager, SaaS Solutions",
-      image: "/placeholder.svg?height=100&width=100",
+      image: g2,
       quote:
         "The custom dashboard built for our SaaS product has received overwhelmingly positive feedback from our clients. The intuitive design and powerful features have set us apart from competitors.",
     },
@@ -443,7 +448,7 @@ export default function TestimonialsPage() {
                           </motion.div>
                         </div>
                         <div>
-                          <h3 className="text-lg font-semibold">{testimonial.name}</h3>
+                          <h3 className="text-lg font-semibold text-white dark:text-black">{testimonial.name}</h3>
                           <p className="text-sm text-gray-400 dark:text-gray-600">{testimonial.role}</p>
                         </div>
                       </div>
@@ -473,7 +478,7 @@ export default function TestimonialsPage() {
                       JOIN THEM?
                     </span>
                   </h2>
-                  <p className="text-gray-300 dark:text-gray-700 mb-6 max-w-2xl mx-auto">
+                  <p className="text-black dark:text-white  mb-6 max-w-2xl mx-auto">
                     Let's work together to create something amazing for your business. Contact me today to discuss your
                     project.
                   </p>
