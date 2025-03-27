@@ -9,6 +9,8 @@ import { Badge } from "@/components/ui/badge"
 import chatbot from "@/app/assets/chatbot.jpg"
 import furniture from "@/app/assets/fthumbnail.png"
 import car from "@/app/assets/Screenshot 2025-03-07 204056.png"
+import ecc from "@/app/assets/ecc.png"
+import gam from "@/app/assets/gam.png"
 interface Project {
   id: string
   title: string
@@ -36,6 +38,28 @@ export function ProjectsSection() {
     },
     {
       id: "project-2",
+      title: "E COMMERCE",
+      description: "Experience lightning-fast shopping with our Next.js & Tailwind-powered platform. Smooth, stylish, and built for the future!",
+      image: ecc,
+      mobileImage: "/placeholder.svg?height=400&width=200",
+      tags: ["Next.js", "Tailwind CSS", "MongoDB"],
+      github: "https://github.com/Khalid-Seniordeveloper/E-COMMERCE-",
+      liveUrl: "https://e-commerce-tan-zeta-42.vercel.app/",
+      category: "Frontend",
+    },
+    {
+      id: "project-3",
+      title: "Gaming Website",
+      description: "Step into the ultimate gaming arena – where skills meet thrill! Play, compete, and dominate with the best!",
+      image: gam,
+      mobileImage: "/placeholder.svg?height=400&width=200",
+      tags: ["Next.js", "Tailwind CSS", "MongoDB"],
+      github: "https://github.com/Khalid-Seniordeveloper/GAMING-WEB-",
+      liveUrl: "https://gaming-web-indol.vercel.app/",
+      category: "Frontend",
+    },
+    {
+      id: "project-4",
       title: "E-Commerce Platform",
       description: "Experience seamless furniture shopping with our full-stack eCommerce platform. Stylish, fast, and built for convenience!",
       image: furniture,
@@ -46,7 +70,7 @@ export function ProjectsSection() {
       category: "FullStack",
     },
     {
-      id: "project-3",
+      id: "project-5",
       title: "Car E-Commerce App",
       description: "Discover the ultimate car shopping experience with our fully responsive Next.js-powered platform. Sleek, fast, and designed for perfection!",
       image: car,
