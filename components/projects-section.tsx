@@ -9,8 +9,8 @@ import { Badge } from "@/components/ui/badge"
 import chatbot from "@/app/assets/chatbot.jpg"
 import furniture from "@/app/assets/fthumbnail.png"
 import car from "@/app/assets/Screenshot 2025-03-07 204056.png"
-import ecc from "@/app/assets/ecc.png"
 import gam from "@/app/assets/gam.png"
+import ecc from "@/app/assets/eeccom.png"
 interface Project {
   id: string
   title: string
