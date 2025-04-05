@@ -14,38 +14,42 @@ import talwind from "@/app/assets/talwind.png";
 import ts from "@/app/assets/ts.png";
 import { Grape } from 'lucide-react';
 import ec from "@/app/assets/ec.jpg"
-
+import gen from "@/app/assets/gen.jpg"
+import m11 from "@/app/assets/m11.jpg"
+import b11 from "@/app/assets/b11.jpg"
+import fooddeck from "@/app/assets/fooddeck.jpg"
+import foodm from "@/app/assets/foodm.jpg"
 export const PortfolioSection = () => {
-    const portfolioProjects  = [
-        {
-          title: "Skorboard",
-          subtitle: "Real-time Score Tracking Platform",
-          tech: "MERN Stack",
-          client: "Built for a USA client",
-          overview:
-            "Skorboard is a real-time socket-based web app developed by Fantronics, covering live scores for MLB, NHL, NFL, NCAAF, CBK, and NBA league matches.",
-          features: ["Real-time live score updates", "Built using WebSockets for instant data transmission"],
-          description:
-            "I developed an interactive and responsive UI to provide sports fans with seamless real-time game updates.",
-          image: talwind,
-          mobileImage: "/placeholder.svg?height=400&width=200",
-          link: "#",
-        },
-        {
-          title: "E-Commerce Platform",
-          subtitle: "Online Shopping Experience",
-          tech: "Next.js + Stripe",
-          client: "Built for a Retail Business",
-          overview:
-            "A complete e-commerce solution with product catalog, shopping cart, user authentication, and payment processing.",
-          features: ["Responsive product catalog with filtering", "Secure payment processing with Stripe"],
-          description:
-            "I designed and developed a full-featured e-commerce platform with a focus on user experience and conversion optimization.",
-          image: "/placeholder.svg?height=600&width=800",
-          mobileImage: "/placeholder.svg?height=400&width=200",
-          link: "#",
-        },
-      ]
+  const portfolioProjects = [
+    {
+      title: "PixelForge",
+      subtitle: "AI-Powered Design Tool",
+      tech: "React + Node.js",
+      client: "Developed for a German startup",
+      overview:
+        "PixelForge is an AI-based platform that assists designers by auto-generating mockups, brand kits, and responsive layouts for web and mobile applications.",
+      features: ["AI-driven UI suggestions", "Real-time design collaboration tools"],
+      description:
+        "I created a highly dynamic frontend integrated with AI APIs, focusing on enhancing the creative workflow of digital artists and UI/UX designers.",
+      image: b11,
+      mobileImage: m11,
+      link: "#",
+    },
+    {
+      title: "FoodDeck",
+      subtitle: "Smart Recipe & Meal Planner",
+      tech: "Next.js + Firebase",
+      client: "Developed for a Health & Fitness Brand",
+      overview:
+        "FoodDeck is a smart recipe suggestion and meal planning platform that tailors recipes to user preferences, dietary needs, and available ingredients.",
+      features: ["AI-powered meal suggestions", "Weekly grocery list generator"],
+      description:
+        "I engineered a sleek, intuitive interface that offers personalized meal plans, helping users maintain a healthy lifestyle through smart food choices.",
+      image: fooddeck,
+      mobileImage: foodm,
+      link: "#",
+    },
+  ];
   return (
     <>
     <section id="portfolio" className="min-h-screen py-20 bg-slate-900/50 dark:bg-slate-200/50">
@@ -160,7 +164,7 @@ transition={{ duration: 0.6, delay: 0.4 }}
 {/* Laptop Image */}
 <div className="relative rounded-xl overflow-hidden border border-purple-500/20 dark:border-purple-600/20 aspect-video">
 <Image
-  src={ project.mobileImage || "/placeholder.svg"}
+  src={ project.image|| "/placeholder.svg"}
   alt={project.title}
   fill
   className="object-cover"

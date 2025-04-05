@@ -58,28 +58,6 @@ export function ProjectsSection() {
       liveUrl: "https://gaming-web-indol.vercel.app/",
       category: "Frontend",
     },
-    {
-      id: "project-4",
-      title: "E-Commerce Platform",
-      description: "Experience seamless furniture shopping with our full-stack eCommerce platform. Stylish, fast, and built for convenience!",
-      image: furniture,
-      mobileImage: "/placeholder.svg?height=400&width=200",
-      tags: ["Next.js",  "Tailwind CSS" , "Sanity"],
-      github: "https://github.com/Khalid-Seniordeveloper/INTERIOR-DESIGN",
-      liveUrl: "https://interior-design-a67a.vercel.app/",
-      category: "FullStack",
-    },
-    {
-      id: "project-5",
-      title: "Car E-Commerce App",
-      description: "Discover the ultimate car shopping experience with our fully responsive Next.js-powered platform. Sleek, fast, and designed for perfection!",
-      image: car,
-      mobileImage: "/placeholder.svg?height=400&width=200",
-      tags: ["React.js", "Talwind CSS"],
-      github: "https://github.com/Khalid-Seniordeveloper/INTERIOR-DESIGN",
-      liveUrl: "https://car-ecommerce-five.vercel.app/",
-      category: "Frontend",
-    },
  
   ]
 
